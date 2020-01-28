@@ -22,7 +22,7 @@
     "mode-s-demodulator": "^1.0.0",
     "opn": "^5.1.0",
     "patterns": "^1.0.3",
-    "rtl-sdr": "IncognitoJam/rtl-sdr"
+    "rtl-sdr": "IncognitoJam/rtl-sdr#master"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
