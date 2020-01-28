@@ -9,7 +9,7 @@
     "data-airports": "mkdir -p data && curl -o data/airports.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
     "data-routes": "mkdir -p data && curl -o data/routes.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
     "postinstall": "npm run data",
-    "test": "prettier --check \"./{server.js,lib/*.js,assets/*.js}\"",
+    "test": "prettier --check \"./{server.js,lib/*.js,assets/client.js}\"",
     "clean": "rm -rf data"
   },
   "dependencies": {
