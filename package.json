@@ -3,6 +3,15 @@
   "version": "1.4.2",
   "description": "📡✈️ App that picks up ADS-B radio signals from airplanes and plots them in real time on a map in your browser",
   "bin": "server.js",
+  "scripts": {
+    "data": "npm run data-airlines && npm run data-airports && npm run data-routes",
+    "data-airlines": "mkdir -p data && curl -o data/airlines.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat",
+    "data-airports": "mkdir -p data && curl -o data/airports.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+    "data-routes": "mkdir -p data && curl -o data/routes.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+    "postinstall": "npm run data",
+    "test": "prettier --check \"./{server.js,lib/*.js,assets/*.js}\"",
+    "clean": "rm -rf data"
+  },
   "dependencies": {
     "csv-parser": "^1.12.0",
     "debug": "^3.1.0",
@@ -13,22 +22,14 @@
     "mode-s-demodulator": "^1.0.0",
     "opn": "^5.1.0",
     "patterns": "^1.0.3",
-    "rtl-sdr": "^0.1.2"
+    "rtl-sdr": "IncognitoJam/rtl-sdr"
   },
   "devDependencies": {
-    "standard": "^10.0.3"
-  },
-  "scripts": {
-    "data": "npm run data-airlines && npm run data-airports && npm run data-routes",
-    "data-airlines": "mkdir -p data && curl -o data/airlines.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat",
-    "data-airports": "mkdir -p data && curl -o data/airports.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
-    "data-routes": "mkdir -p data && curl -o data/routes.csv https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
-    "postinstall": "npm run data",
-    "test": "standard"
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/watson/airplanejs.git"
+    "url": "git+https://github.com/IncognitoJam/airplanejs.git"
   },
   "keywords": [
     "map",
@@ -51,14 +52,17 @@
     "1090",
     "1090mhz"
   ],
-  "author": "Thomas Watson <w@tson.dk> (https://twitter.com/wa7son)",
+  "contributors": [
+    "Cameron Clough <cameronjclough@gmail.com> (https://github.com/IncognitoJam)",
+    "Thomas Watson <w@tson.dk> (https://twitter.com/wa7son)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/watson/airplanejs/issues"
+    "url": "https://github.com/IncognitoJam/airplanejs/issues"
   },
-  "homepage": "https://github.com/watson/airplanejs#readme",
+  "homepage": "https://github.com/IncognitoJam/airplanejs#readme",
   "coordinates": [
-    55.777598,
-    12.58985
+    55.777676,
+    12.590184
   ]
 }
